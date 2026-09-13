@@ -40,3 +40,15 @@ const totalUnidadesHTML = document.getElementById("total-unidades");
 totalUnidadesHTML.textContent = resumen["Total de Unidades"];
 const valorInventarioHTML = document.getElementById("valor-inventario");
 valorInventarioHTML.textContent = resumen["Valor del Inventario"].toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+const listaProductosHTML = document.getElementById("lista-productos");
+
+productos.forEach(producto => { 
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+        <td>${producto.nombre}</td>
+        <td>${producto.precio.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
+        <td>${producto.stock}</td>
+    `;
+    listaProductosHTML.appendChild(fila);
+});
