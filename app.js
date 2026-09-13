@@ -1,23 +1,42 @@
 const productos = [
-    {nombre: "Arroz", precio: 1.25, stock: 10 },
-    {nombre: "Aceite", precio: 3.5, stock: 0},
-    {nombre: "Azucar", precio: 1.1, stock: 8},
-    {nombre: "Leche", precio: 1.4, stock: 0},
-    {nombre: "Café", precio: 1.4, stock: 5}
+    {nombre: "Mouse", precio: 15, stock: 10 },
+    {nombre: "Teclado", precio: 25, stock: 5},
+    {nombre: "Monitor", precio: 150, stock: 0},
+    {nombre: "USB", precio: 8, stock: 20},
 ];
 
-const productosDisponiblesCaros = productos.filter(producto => producto.stock > 0 && producto.precio >= 1.4);
 
-console.log("Productos disponibles y caros:", productosDisponiblesCaros);
+function contarProductos (productos) {
+    const totalProductos = productos.reduce((total, producto) => total + 1, 0);
+    return totalProductos;
+};
 
-const productoMasStock = productos.filter(producto => producto.stock >= 5);
+function calcularValorInventario (productos) {
+    const valorInventario = productos.reduce((total, producto) => total + (producto.precio * producto.stock), 0);
+    return valorInventario;
+}
 
-console.log("Productos con stock mayor o igual a 5:", productoMasStock);
+function totalUnidades (productos) {
+    const totalUnidades = productos.filter(producto => producto.stock > 0).reduce((total, producto) => total + producto.stock, 0);
+    return totalUnidades;
+}
 
-const productoEconomicosDisponibles = productos.filter(producto => producto.stock > 0 && producto.precio < 2);
+function obtenerResumenInventario (productos) {
+    const resumen = {
+        "Total de Productos": contarProductos(productos),
+        "Total de Unidades": totalUnidades(productos),
+        "Valor del Inventario": calcularValorInventario(productos)
+    };
+    return resumen;
+}
 
-console.log("Productos económicos y disponibles:", productoEconomicosDisponibles);
+const contenedorResumen = document.getElementById("resumen-inventario");
 
-const totalUnidades = productos.reduce((total, producto) => total + producto.stock, 0);
+const resumen = obtenerResumenInventario(productos);
 
-console.log("Total de unidades en stock:", totalUnidades);
+const totalProductosHTML = document.getElementById("total-productos");
+totalProductosHTML.textContent = resumen["Total de Productos"];
+const totalUnidadesHTML = document.getElementById("total-unidades");
+totalUnidadesHTML.textContent = resumen["Total de Unidades"];
+const valorInventarioHTML = document.getElementById("valor-inventario");
+valorInventarioHTML.textContent = resumen["Valor del Inventario"].toLocaleString('en-US', { style: 'currency', currency: 'USD' });

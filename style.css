@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5e7eb;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 40px;
+}
+
+#resumen-inventario {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    border-top: 5px solid #4f46e5;
+}
+
+.tarjeta h2 {
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+
+.numero {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.azul {
+    color: #2563eb;
+}
+
+.verde {
+    color: #16a34a;
+}
+
+.morado {
+    color: #7c3aed;
+}
