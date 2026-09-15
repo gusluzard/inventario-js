@@ -57,3 +57,21 @@ h1 {
 .morado {
     color: #7c3aed;
 }
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 2px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.encabezado-tabla {
+    background-color: #2563eb;
+    color: white;
+}

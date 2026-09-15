@@ -52,3 +52,19 @@ productos.forEach(producto => {
     `;
     listaProductosHTML.appendChild(fila);
 });
+
+const encabezadoProducto = document.querySelector("th");
+
+encabezadoProducto.textContent = "Producto";
+
+const encabezados = document.querySelectorAll("th");
+
+encabezados.forEach(encabezado => {
+    encabezado.classList.add("encabezado-tabla");
+});
+
+const nuevosTitulos = ["Producto", "Precio USD", "Unidades"];
+
+encabezados.forEach((encabezado, indice) =>{
+    encabezado.textContent = nuevosTitulos[indice];
+});
