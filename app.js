@@ -1,3 +1,5 @@
+
+
 const productos = [
     {nombre: "Mouse", precio: 15, stock: 10 },
     {nombre: "Teclado", precio: 25, stock: 5},
@@ -59,12 +61,31 @@ encabezadoProducto.textContent = "Producto";
 
 const encabezados = document.querySelectorAll("th");
 
-encabezados.forEach(encabezado => {
-    encabezado.classList.add("encabezado-tabla");
-});
+
 
 const nuevosTitulos = ["Producto", "Precio USD", "Unidades"];
 
 encabezados.forEach((encabezado, indice) =>{
     encabezado.textContent = nuevosTitulos[indice];
 });
+
+encabezados.forEach(encabezado => {
+    encabezado.classList.remove("encabezado-tabla");
+});
+
+encabezados[0].classList.add("encabezado-tabla");
+
+encabezados.forEach((encabezado, indice) => {
+    if (encabezado.classList.contains("encabezado-tabla")) {
+        console.log(indice, "Tiene el estilo aplicado");
+    } else {
+        console.log(indice, "No tiene el estilo aplicado");
+    }
+});
+
+encabezados.forEach(encabezado => {
+    if (!encabezado.classList.contains("encabezado-tabla")) {
+        encabezado.classList.add("encabezado-tabla");
+    }
+});
+
