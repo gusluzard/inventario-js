@@ -52,6 +52,13 @@ productos.forEach(producto => {
         <td>${producto.precio.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
         <td>${producto.stock}</td>
     `;
+    if (producto.stock === 0) {
+            fila.classList.add("sin-stock");
+        }else if(producto.stock >0 && producto.stock<=5){
+            fila.classList.add("stock-bajo")
+        };
+
+
     listaProductosHTML.appendChild(fila);
 });
 
@@ -89,3 +96,24 @@ encabezados.forEach(encabezado => {
     }
 });
 
+const botonDisponibles = document.getElementById("btn-disponibles");
+
+botonDisponibles.addEventListener("click", ()=> {
+    const productosDisponibles = productos.filter(producto => producto.stock > 0);
+
+    listaProductosHTML.innerHTML = "";
+    
+    productosDisponibles.forEach(producto => {
+        const fila = document.createElement("tr");
+
+        fila.innerHTML = `
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td>${producto.stock}</td>
+        `;
+
+        listaProductosHTML.appendChild(fila);
+    });
+
+    listaProductosHTML.appendChild(fila);
+});
