@@ -45,6 +45,10 @@ valorInventarioHTML.textContent = resumen["Valor del Inventario"].toLocaleString
 
 const listaProductosHTML = document.getElementById("lista-productos");
 
+let productosSinStock = 0;
+
+const textoSinStock = document.getElementById("productos-sin-stock");
+
 productos.forEach(producto => { 
     const fila = document.createElement("tr");
     fila.innerHTML = `
@@ -53,14 +57,20 @@ productos.forEach(producto => {
         <td>${producto.stock}</td>
     `;
     if (producto.stock === 0) {
+            productosSinStock++;
             fila.classList.add("sin-stock");
         }else if(producto.stock >0 && producto.stock<=5){
             fila.classList.add("stock-bajo")
         };
 
-
     listaProductosHTML.appendChild(fila);
+
 });
+
+console.log("Productos sin stock:", productosSinStock);
+
+textoSinStock.textContent = `Productos sin stock: ${productosSinStock}`;
+
 
 const encabezadoProducto = document.querySelector("th");
 
@@ -115,5 +125,46 @@ botonDisponibles.addEventListener("click", ()=> {
         listaProductosHTML.appendChild(fila);
     });
 
-    listaProductosHTML.appendChild(fila);
 });
+
+const botonStockBajo = document.getElementById("btn-stock-bajo");
+
+botonStockBajo.addEventListener("click", ()=> {
+    const productosStockBajo = productos.filter(producto => producto.stock > 0 && producto.stock <= 5);
+
+    listaProductosHTML.innerHTML = "";
+    
+    productosStockBajo.forEach(producto => {
+        const fila = document.createElement("tr");
+
+        fila.innerHTML = `
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td>${producto.stock}</td>
+        `;
+
+        listaProductosHTML.appendChild(fila);
+    });
+
+});
+
+const botonTodos = document.getElementById("btn-todos");
+
+botonTodos.addEventListener("click", ()=> {
+
+    listaProductosHTML.innerHTML = "";
+    
+    productos.forEach(producto => {
+        const fila = document.createElement("tr");
+
+        fila.innerHTML = `
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td>${producto.stock}</td>
+        `;
+
+        listaProductosHTML.appendChild(fila);
+    });
+
+});
+
