@@ -168,3 +168,55 @@ botonTodos.addEventListener("click", ()=> {
 
 });
 
+const productosConStock = productos.filter(producto => producto.stock > 0);
+
+const textoConStock = document.getElementById("productos-con-stock");
+
+textoConStock.textContent = `Productos con stock: ${productosConStock.length}`;
+
+const porcentajeDisponibles = productosConStock.length / productos.length * 100;
+
+const textoPorcentajeDisponibles = document.getElementById("porcentaje-disponibles");
+
+textoPorcentajeDisponibles.textContent = `Porcentaje disponibles: ${porcentajeDisponibles}%`;
+
+
+const nombresDisponibles = productos.filter(producto => producto.stock > 0).map(producto => producto.nombre);
+
+console.log(nombresDisponibles);
+
+const nombresStockBajo = productos.filter(producto => producto.stock>0 && producto.stock <= 5).map(producto => producto.nombre);
+console.log(nombresStockBajo);
+
+const nombresPrecio = productos.filter(producto => producto.stock>0).map(producto => ({ nombre: producto.nombre, precio: producto.precio}));
+console.log(nombresPrecio);
+
+const productosResumen = productos.filter(producto => producto.stock>0).map(producto => ({ nombre: producto.nombre, precio: producto.precio, stock: producto.stock}));
+console.log(productosResumen);
+
+const total = productos.reduce((acumulador, producto) => {
+    let suma = producto.precio * producto.stock;
+    acumulador += suma;
+    return acumulador;
+}, 0);
+
+console.log(total.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+
+const totalDisponibles = productos.filter(producto => producto.stock > 0).reduce((acumulador, producto) => {
+    let suma = producto.precio * producto.stock;
+    acumulador += suma;
+    return acumulador;
+}, 0);
+
+console.log(totalDisponibles);
+
+const unidadesDisponibles = productos.reduce((acumulador, producto) => {
+    acumulador += producto.stock;
+    return acumulador;
+},0);
+
+console.log(unidadesDisponibles);
+
+const itemsDisponibles = productos.filter(producto => producto.stock >0);
+
+console.log(itemsDisponibles.length);
