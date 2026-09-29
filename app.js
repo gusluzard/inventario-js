@@ -220,3 +220,81 @@ console.log(unidadesDisponibles);
 const itemsDisponibles = productos.filter(producto => producto.stock >0);
 
 console.log(itemsDisponibles.length);
+
+
+const valorStockBajo = productos.filter(producto => producto.stock > 0 && producto.stock <= 5).reduce((acumulador, producto) => {
+    let suma = producto.precio * producto.stock;
+    acumulador += suma;
+    return acumulador;
+}, 0);
+
+console.log(valorStockBajo);
+
+const resumenProductos = productos.filter(producto => producto.stock > 0).map(producto => ({nombre: producto.nombre, valor: producto.precio * producto.stock}));
+
+console.log(resumenProductos);
+
+const productoBuscado = productos.find(producto => producto.nombre === "Teclado");
+
+console.log(productoBuscado);
+
+const productoSinStock = productos.find(producto => producto.stock===0);
+
+console.log(productoSinStock);
+
+const productoCaro = productos.find(producto => producto.precio > 100);
+
+console.log(productoCaro);
+
+const productoDisponible = productos.find(producto => producto.stock > 0);
+
+console.log(productoDisponible);
+
+const hayProductoCaro = productos.some(producto => producto.precio > 100);
+
+console.log(hayProductoCaro);
+
+const hayStockBajo = productos.some(producto => producto.stock > 0 && producto.stock <= 5);
+
+console.log(hayStockBajo);
+
+const hayProductoAgotadoCaro = productos.some(producto => producto.stock === 0 && producto.precio > 200);
+
+console.log(hayProductoAgotadoCaro);
+
+const todosPreciosMayoresCinco = productos.every(producto => producto.precio > 5);
+
+console.log(todosPreciosMayoresCinco);
+
+const todosDisponibles = productos.every(producto => producto.stock > 0);
+
+console.log(todosDisponibles);
+
+const disponiblesMayorCinco = productos.filter(producto => producto.stock > 0).every(producto => producto.precio > 5);
+
+console.log(disponiblesMayorCinco);
+
+
+
+const existeSinStock = productos.some(producto => producto.stock === 0);
+
+console.log(existeSinStock);
+
+const todosMenores200 = productos.every(producto => producto.precio < 200);
+
+console.log(todosMenores200);
+
+const productoConMuchoStock = productos.find(producto => producto.stock > 15);
+
+console.log(productoConMuchoStock);
+
+
+const precios = [150, 25, 8, 15, 100];
+
+precios.sort((a,b) => a - b);
+
+console.log(precios);
+
+productos.sort((a,b) => a.precio - b.precio);
+
+console.log(productos);
