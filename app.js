@@ -295,6 +295,41 @@ precios.sort((a,b) => a - b);
 
 console.log(precios);
 
-productos.sort((a,b) => a.precio - b.precio);
+/*productos.sort((a,b) => a.precio - b.precio);
 
 console.log(productos);
+
+productos.sort((a,b) => b.precio - a.precio);
+
+console.log(productos);
+
+productos.sort((a,b) => a.stock - b.stock);
+
+console.log(productos);
+
+productos.sort((a,b) => b.stock - a.stock);
+
+console.log(productos);
+
+const sortDisponibles = productos.filter(producto => producto.stock > 0).sort((a,b) => b.precio - a.precio);
+console.log(sortDisponibles);
+
+const nombresDisponibles2 = productos
+    .filter(producto => producto.stock > 0)
+    .sort((a,b) => a.nombre.localeCompare(b.nombre))
+    .map(producto => producto.nombre);
+
+console.log(nombresDisponibles2);
+
+const productosZA = productos
+    .sort((a,b) => b.nombre.localeCompare(a.nombre))
+    .map(producto => producto.nombre);
+
+console.log(productosZA);*/
+
+const productosDisponiblesOrdenados = productos
+    .filter(producto => producto.stock > 0)
+    .sort((a,b) => b.stock - a.stock)
+    .map(producto => producto.nombre);
+
+console.log(productosDisponiblesOrdenados);
