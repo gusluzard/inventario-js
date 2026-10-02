@@ -181,6 +181,9 @@ const textoPorcentajeDisponibles = document.getElementById("porcentaje-disponibl
 textoPorcentajeDisponibles.textContent = `Porcentaje disponibles: ${porcentajeDisponibles}%`;
 
 
+//Practicando con métodos
+
+/*
 const nombresDisponibles = productos.filter(producto => producto.stock > 0).map(producto => producto.nombre);
 
 console.log(nombresDisponibles);
@@ -295,7 +298,7 @@ precios.sort((a,b) => a - b);
 
 console.log(precios);
 
-/*productos.sort((a,b) => a.precio - b.precio);
+productos.sort((a,b) => a.precio - b.precio);
 
 console.log(productos);
 
@@ -325,7 +328,7 @@ const productosZA = productos
     .sort((a,b) => b.nombre.localeCompare(a.nombre))
     .map(producto => producto.nombre);
 
-console.log(productosZA);*/
+console.log(productosZA);
 
 const productosDisponiblesOrdenados = productos
     .filter(producto => producto.stock > 0)
@@ -333,3 +336,74 @@ const productosDisponiblesOrdenados = productos
     .map(producto => producto.nombre);
 
 console.log(productosDisponiblesOrdenados);
+
+
+const prodEcoDisponibles = productos
+    .filter(producto => producto.stock > 0 && producto.precio < 100)
+    .sort((a,b) => a.precio - b.precio)
+    .map(producto => producto.nombre);
+
+console.log(prodEcoDisponibles);
+
+console.log(productos);
+const ejercicio1 = productos.findIndex (producto => producto.precio===25);
+console.log(ejercicio1);
+
+const ejercicio2 = productos.findIndex (producto => producto.stock===0);
+console.log(ejercicio2);
+
+const ejercicio3 = productos.findIndex (producto => producto.nombre==="Tablet");
+
+if (ejercicio3 !== -1) {
+    console.log("Producto encontrado");
+} else {
+    console.log("Producto no encontrado");
+};
+
+
+
+const nombresProductos = productos.map(producto => producto.nombre);
+
+console.log(nombresProductos.includes("Teclado"));
+
+console.log(nombresProductos.includes("Laptop"));
+
+console.log(nombresProductos.includes("Monitor"));
+
+
+const otroArray = productos.map(producto => producto.nombre);
+
+console.log(otroArray.indexOf("USB"));
+
+console.log(otroArray.indexOf("Mouse"));
+
+const buscarProducto = otroArray.indexOf("Laptop");
+if (buscarProducto !== -1) {
+    console.log("Producto encontrado");
+} else {
+    console.log("Producto no encontrado");
+};
+
+*/
+
+const categorias = [
+    ["Mouse", "Teclado"],
+    ["Monitor", "Laptop"],
+    ["USB", "Audífonos"]
+];
+
+const ejercicio1 = categorias.flat();
+console.log(ejercicio1);
+
+const categoriasAnidadas = [
+    ["Mouse", ["Teclado", "Monitor"]],
+    ["USB", ["Audífonos"]]
+];
+
+const ejercicio2 = categoriasAnidadas.flat(2);
+console.log(ejercicio2);
+
+
+const frutas = ["Papaya", ["Aguacate", "Piña"], "Sandía", "Pera", ["Uva", "Mango"]];
+const ejercicio3 = frutas.flat(1);
+console.log(ejercicio3);
