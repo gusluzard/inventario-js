@@ -384,7 +384,7 @@ if (buscarProducto !== -1) {
     console.log("Producto no encontrado");
 };
 
-*/
+
 
 const categorias = [
     ["Mouse", "Teclado"],
@@ -407,3 +407,48 @@ console.log(ejercicio2);
 const frutas = ["Papaya", ["Aguacate", "Piña"], "Sandía", "Pera", ["Uva", "Mango"]];
 const ejercicio3 = frutas.flat(1);
 console.log(ejercicio3);
+
+*/
+
+//Fecha: 03/06/2024
+
+const numeros = [2, 4, 6, 8];
+
+const ejercicio1 = numeros.flatMap(numero => [numero, numero * 2]);
+console.log(ejercicio1);
+
+const productos2 = ["Mouse", "Teclado", "Monitor"];
+
+const ejercicio2 = productos2.flatMap(producto => [producto, "Disponible"]);
+console.log(ejercicio2);
+
+const categorias = [
+    {
+        nombre: "Periféricos",
+        productos: ["Mouse", "Teclado"]
+    },
+    {
+        nombre: "Monitores",
+        productos: ["Monitor Samsung", "Monitor LG"]
+    },
+    {
+        nombre: "Almacenamiento",
+        productos: ["USB", "Disco SSD"]
+    }
+];
+
+const ejercicio3 = categorias.flatMap(categoria => categoria.productos);
+console.log(ejercicio3);
+
+
+const nombre = "JAVASCRIPT";
+
+const resultado = Array.from(nombre);
+console.log(resultado);
+
+const numerosTexto = "246810";
+const resultado2 = Array.from(numerosTexto, numero => Number(numero));
+console.log(resultado2);
+
+const delUnoAlDiez = Array.from({length: 10}, (numero, index) => index + 1);
+console.log(delUnoAlDiez);
