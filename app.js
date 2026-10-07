@@ -408,7 +408,7 @@ const frutas = ["Papaya", ["Aguacate", "Piña"], "Sandía", "Pera", ["Uva", "Man
 const ejercicio3 = frutas.flat(1);
 console.log(ejercicio3);
 
-*/
+
 
 //Fecha: 03/06/2024
 
@@ -452,3 +452,39 @@ console.log(resultado2);
 
 const delUnoAlDiez = Array.from({length: 10}, (numero, index) => index + 1);
 console.log(delUnoAlDiez);
+
+*/
+//Fecha 06/10/2026
+
+const productosTexto = "Mouse, Teclado, Monitor, USB";
+
+const resultado = productosTexto.split(", ");
+console.log(resultado);
+
+const categoriasTexto = "Periféricos|Monitores|Almacenamiento|Audio";
+
+const resultado2 = categoriasTexto.split("|");
+console.log(resultado2);
+
+const preciosTexto = "10,25,50,100";
+
+const resultado3 = preciosTexto.split(",").map(precio => Number(precio));
+console.log(resultado3);
+
+const preciosMayores20 = "15,25,8,150,100";
+
+const resultado4 = preciosMayores20.split(",").map(numero => Number(numero)).filter(numero => numero >20);
+console.log(resultado4);
+
+const productosConPrecio = "Mouse:15,Teclado:25,Monitor:150,USB:8";
+
+const productosObjeto = productosConPrecio.split(",").map(producto => {
+    const datos = producto.split(":");
+
+    return{
+        "nombre": datos[0],
+        "precio": Number(datos[1])
+    };
+});
+
+console.log(productosObjeto);
