@@ -488,3 +488,4 @@ const productosObjeto = productosConPrecio.split(",").map(producto => {
 });
 
 console.log(productosObjeto);
+
