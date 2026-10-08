@@ -453,7 +453,7 @@ console.log(resultado2);
 const delUnoAlDiez = Array.from({length: 10}, (numero, index) => index + 1);
 console.log(delUnoAlDiez);
 
-*/
+
 //Fecha 06/10/2026
 
 const productosTexto = "Mouse, Teclado, Monitor, USB";
@@ -489,3 +489,42 @@ const productosObjeto = productosConPrecio.split(",").map(producto => {
 
 console.log(productosObjeto);
 
+*/
+
+//Fecha 07/10/2026
+
+const productos2 = [
+    { nombre: "Mouse", precio: 15, stock: 10 },
+    { nombre: "Teclado", precio: 25, stock: 5 },
+    { nombre: "Monitor", precio: 150, stock: 0 }
+];
+
+/*
+const resultado = productos2.map(producto => {
+    const valorStock = producto.precio * producto.stock;
+
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio,
+        valorStock: valorStock
+    };
+});
+*/
+
+const resultado = productos2.map(producto => {
+    const disponible = () => {
+        if (producto.stock > 0){
+            return true;
+        } else {
+            return false;
+        };
+
+    };
+
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio,
+        disponible
+    };
+});
+console.log(resultado);
