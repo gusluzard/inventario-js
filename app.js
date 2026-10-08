@@ -510,16 +510,9 @@ const resultado = productos2.map(producto => {
     };
 });
 */
-
+/*
 const resultado = productos2.map(producto => {
-    const disponible = () => {
-        if (producto.stock > 0){
-            return true;
-        } else {
-            return false;
-        };
-
-    };
+    const disponible = producto.stock > 0 ? true : false ;
 
     return {
         nombre: producto.nombre,
@@ -528,3 +521,86 @@ const resultado = productos2.map(producto => {
     };
 });
 console.log(resultado);
+
+const resultado2 = productos2.map(producto => {
+    let nivelStock = "";
+    if (producto.stock === 0){
+        nivelStock = "Necesita reposición";
+    } else if (producto.stock > 0 && producto.stock <= 5){
+        nivelStock = "Pedir pronto";
+    } else {
+        nivelStock = "Stock suficiente";
+    };
+
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio,
+        nivelStock
+    };
+});
+
+console.log(resultado2);
+
+const ejercicio5 = productos2.map(producto => {
+    const valorStock = producto.precio * producto.stock;
+
+    let estado = "";
+    if (producto.stock === 0){
+        estado = "Agotado";
+    } else {
+        estado = "Disponible";
+    };
+
+    return {
+        nombre: producto.nombre,
+        valorStock,
+        estado
+    };
+})
+
+console.log(ejercicio5);
+
+const ejercicio6 = productos2.map(producto => {
+    const precioConDescuento = producto.precio * 0.90;
+
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio,
+        precioConDescuento
+    };
+});
+
+console.log(ejercicio6);
+
+const ejercicio7 = productos2
+    .filter(producto => producto.stock > 0)
+    .map( producto => {
+        const valorStock = producto.precio * producto.stock;
+
+        return {
+            nombre: producto.nombre,
+            precio: producto.precio,
+            valorStock
+        };
+    });
+
+    console.log(ejercicio7);
+
+    const ejercicio8 = productos2
+    .filter(producto => producto.stock > 0 && producto.precio < 100)
+    .map( producto => {
+        const valorStock = producto.precio * producto.stock;
+
+        return {
+            nombre: producto.nombre,
+            precio: producto.precio,
+            valorStock
+        };
+    });
+
+    console.log(ejercicio8);
+
+    */
+   //Fecha: 08/10/2026
+
+   
