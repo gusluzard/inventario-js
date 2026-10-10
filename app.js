@@ -603,4 +603,134 @@ const ejercicio7 = productos2
     */
    //Fecha: 08/10/2026
 
-   
+   //Fecha 09/10/2026
+   /*
+const producto = {
+    nombre: "Monitor",
+    precio: 150,
+    stock: 8,
+    categoria: "Periféricos"
+};
+
+
+const {nombre, precio, categoria} = producto;
+
+const resumenProducto = {
+    nombre: nombre,
+    precio: precio,
+    categoria: categoria
+};
+
+console.log(resumenProducto);
+*/
+/*
+const producto = {
+    nombre: "Mouse",
+    precio: 15,
+    stock: 10,
+    categoria: "Periféricos"
+};
+
+const {nombre, stock} = producto;
+
+const productoDisponible = {
+    nombre,
+    stock
+};
+
+console.log(productoDisponible);
+
+*/
+/*
+const producto = {
+    nombre: "Monitor",
+    precio: 150,
+    stock: 8
+};
+
+const {nombre: nombreProducto, precio: precioProducto} = producto;
+
+console.log(nombreProducto, precioProducto);
+
+*/
+/*
+const producto = {
+    nombre: "Mouse",
+    precio: 15
+};
+
+const {nombre:nombreProducto, stock:stockProducto = 0} = producto;
+
+console.log(nombreProducto, stockProducto);
+*/
+/*
+const producto2 = {
+    nombre: "Monitor",
+    precio: 150
+};
+
+const {nombre:nombreProducto, precio:precioProducto, stock:stockProducto = 0} = producto2;
+
+const resumenProducto = {
+    nombreProducto,
+    precioProducto,
+    stockProducto
+};
+
+console.log(resumenProducto);
+*/
+/*
+const productos3 = ["Mouse", "Teclado", "Monitor", "USB"];
+
+const [primerProducto, , tercerProducto] = productos3;
+
+console.log(primerProducto, tercerProducto);
+*/
+/*
+const productos4 = ["Mouse"];
+
+const [primerProducto, segundoProducto = "No disponible"] = productos4;
+
+console.log(primerProducto, segundoProducto);
+*/
+/*
+const producto = {
+    nombre: "Teclado",
+    precio: 25,
+    etiquetas: ["Tecnología", "Periféricos"]
+};
+
+const {nombre:nombreProducto, etiquetas: etiquetasProducto} = producto;
+
+const [primeraEtiqueta] = etiquetasProducto;
+
+console.log(nombreProducto, primeraEtiqueta);
+*/
+/*
+const producto = {
+    nombre: "Laptop",
+    precio: 800,
+    fabricante: {
+        marca: "Lenovo",
+        pais: "China"
+    }
+};
+
+const {nombre:nombreProducto, fabricante:{marca:marcaProducto}} = producto;
+
+console.log(nombreProducto, marcaProducto);
+*/
+
+const producto = {
+    nombre: "Laptop",
+    precio: 800,
+    fabricante: {
+        marca: "Lenovo",
+        pais: "China",
+        garantia: 2
+    }
+};
+
+const {nombre:nombreProducto, fabricante:{marca:marcaFabricante, pais:paisFabricante, garantia}} = producto;
+
+console.log(nombreProducto, marcaFabricante, paisFabricante, garantia);
