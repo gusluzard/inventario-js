@@ -640,4 +640,78 @@ const productosCopia = [...productos5, "USB"];
 console.log(productos5);
 console.log(productosCopia);
 */
+/*
+const productosNuevos = ["Laptop", "Tablet"];
+
+const productosOferta = ["Mouse", "Teclado"];
+
+const catalogoCompleto = [...productosNuevos, ...productosOferta];
+
+console.log(catalogoCompleto);
+*/
+/*
+const producto = {
+    nombre: "Teclado",
+    precio: 25,
+    stock: 5
+};
+
+const productoConMasStock = {
+    ...producto, stock: 12
+};
+
+console.log(productoConMasStock);
+console.log(producto);
+
+*/
+/*
+const productos2 = [
+    { nombre: "Mouse", precio: 15, stock: 10 },
+    { nombre: "Teclado", precio: 25, stock: 5 },
+    { nombre: "Monitor", precio: 150, stock: 0 }
+];
+
+const productosActualizados = [
+    ...productos2, {
+        nombre: "USB",
+        precio: 8,
+        stock: 20
+    }
+];
+
+console.log(productosActualizados);
+console.log(productos2);
+*/
+/*
+const tareas = ["Estudiar HTML", "Practicar JavaScript"];
+
+const tareasActualizadas = ["Repasar CSS", ...tareas];
+
+console.log(tareasActualizadas);
+console.log(tareas);
+
+*/
+/*
+const producto = {
+    nombre: "Monitor",
+    precio: 150,
+    stock: 0,
+    categoria: "Tecnología"
+};
+
+const {nombre, stock, ...detalles} = producto;
+
+console.log(nombre);
+console.log(stock);
+console.log(detalles);
+*/
+
+const calcular = () => {
+    return 5 + 3;
+};
+
+const resultado = calcular;
+
+console.log(resultado);
+console.log(resultado());
 

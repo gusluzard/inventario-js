@@ -67,7 +67,7 @@ productos.forEach(producto => {
 
 });
 
-console.log("Productos sin stock:", productosSinStock);
+//console.log("Productos sin stock:", productosSinStock);
 
 textoSinStock.textContent = `Productos sin stock: ${productosSinStock}`;
 
@@ -91,7 +91,7 @@ encabezados.forEach(encabezado => {
 });
 
 encabezados[0].classList.add("encabezado-tabla");
-
+/*
 encabezados.forEach((encabezado, indice) => {
     if (encabezado.classList.contains("encabezado-tabla")) {
         console.log(indice, "Tiene el estilo aplicado");
@@ -99,7 +99,7 @@ encabezados.forEach((encabezado, indice) => {
         console.log(indice, "No tiene el estilo aplicado");
     }
 });
-
+*/
 encabezados.forEach(encabezado => {
     if (!encabezado.classList.contains("encabezado-tabla")) {
         encabezado.classList.add("encabezado-tabla");
