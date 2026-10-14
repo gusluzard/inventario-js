@@ -705,7 +705,7 @@ console.log(nombre);
 console.log(stock);
 console.log(detalles);
 */
-
+/*
 const calcular = () => {
     return 5 + 3;
 };
@@ -714,4 +714,31 @@ const resultado = calcular;
 
 console.log(resultado);
 console.log(resultado());
+*/
+/*
+const calcularPrecio = (precio, cantidad) => {
+    return precio * cantidad;
+};
+
+const operacion = calcularPrecio;
+
+console.log(operacion(3, 25));
+*/
+
+const aplicarDescuento = (precio, calcular) => {
+    return calcular(precio);
+};
+
+const descuento10 = precio => precio * 0.90;
+
+const descuento20 = precio => precio * 0.80;
+
+const descuento1 = aplicarDescuento(100,descuento10);
+
+const descuento2 = aplicarDescuento(100,descuento20);
+
+console.log(descuento1);
+
+console.log(descuento2);
+
 
