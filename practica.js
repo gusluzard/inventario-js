@@ -705,6 +705,13 @@ console.log(nombre);
 console.log(stock);
 console.log(detalles);
 */
+
+
+
+//--------CALLBACKS-------
+
+
+
 /*
 const calcular = () => {
     return 5 + 3;
@@ -724,7 +731,7 @@ const operacion = calcularPrecio;
 
 console.log(operacion(3, 25));
 */
-
+/*
 const aplicarDescuento = (precio, calcular) => {
     return calcular(precio);
 };
@@ -740,5 +747,112 @@ const descuento2 = aplicarDescuento(100,descuento20);
 console.log(descuento1);
 
 console.log(descuento2);
+*/
+/*
+const productos2 = [
+    { nombre: "Mouse", precio: 15, stock: 10 },
+    { nombre: "Teclado", precio: 25, stock: 5 },
+    { nombre: "Monitor", precio: 150, stock: 0 },
+    { nombre: "USB", precio: 8, stock: 20 }
+];
 
+const filtrarProductos = (lista, condicion) => {
+    return lista.filter(condicion);
+};
+
+const productosDisponibles = filtrarProductos(productos2, producto => producto.stock > 0);
+
+const productosEconomicos = filtrarProductos(productos2, producto => producto.precio < 20);
+
+console.log(productosDisponibles);
+
+console.log(productosEconomicos);
+*/
+/*
+const procesarPedido = (callback) => {
+    console.log("Procesando pedido...");
+
+    callback();
+};
+
+const cofirmarPedido = () => {
+    console.log("¡Pedido confirmado!");
+
+};
+
+procesarPedido(cofirmarPedido);
+
+*/
+/*
+const procesarPrecio = (precio, callback) => {
+    const precioFinal = precio * 1.15;
+
+    callback(precioFinal);
+};
+
+const mostrarPrecio = (precioFinal) => {
+    console.log(`El precio final es: $${precioFinal.toFixed(2)}`);
+};
+
+procesarPrecio(25,mostrarPrecio);
+*/
+/*
+const producto = {
+    nombre: "Teclado",
+    precio: 25,
+    stock: 5
+};
+
+const verificarStock = (producto, callback) => {
+    if (producto.stock > 0) {
+        callback(producto.nombre);
+    }
+};
+
+const mostrarDisponibilidad = (nombre) => {
+    console.log(`El producto ${nombre} está disponible`);
+};
+
+verificarStock(producto, mostrarDisponibilidad);
+*/
+/*
+const calcularPrecioFinal = (precio, descuento) => {
+    return descuento(precio);
+};
+
+const descuento10 = precio => precio * 0.90;
+
+const descuento20 = precio => precio * 0.80;
+
+const primerDescuento = calcularPrecioFinal(200, descuento10);
+
+const segundoDescuento = calcularPrecioFinal(200, descuento20);
+
+console.log(
+    `Se ha efectuado su descuento del 10% su valor total es de $${primerDescuento.toFixed(2)}`);
+
+console.log(
+    `Se ha efectuado su descuento del 20% su valor total es de $${segundoDescuento.toFixed(2)}`);
+    
+*/
+
+const productos2 = [
+    { nombre: "Mouse", precio: 15, stock: 10 },
+    { nombre: "Teclado", precio: 25, stock: 5 },
+    { nombre: "Monitor", precio: 150, stock: 0 },
+    { nombre: "USB", precio: 8, stock: 20 }
+];
+
+const procesarProductos = (lista, callback) => {
+    lista.forEach(producto => {
+        callback(producto);
+    });
+};
+
+const mostrarValorStock = (producto) => {
+    const valor = producto.precio * producto.stock;
+    console.log(`El valor total del producto ${producto.nombre} es de $${valor}`);
+};
+
+procesarProductos(productos2, mostrarValorStock);
 
