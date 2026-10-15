@@ -835,7 +835,7 @@ console.log(
     `Se ha efectuado su descuento del 20% su valor total es de $${segundoDescuento.toFixed(2)}`);
     
 */
-
+/*
 const productos2 = [
     { nombre: "Mouse", precio: 15, stock: 10 },
     { nombre: "Teclado", precio: 25, stock: 5 },
@@ -855,4 +855,23 @@ const mostrarValorStock = (producto) => {
 };
 
 procesarProductos(productos2, mostrarValorStock);
+*/
+
+
+
+//-------PROMESAS----------
+
+
+const promesaProducto = new Promise((resolve, reject) => {
+    resolve({
+        nombre: "Teclado",
+        precio: 25,
+        stock: 5
+    });
+});
+
+promesaProducto.then(producto => {
+    const valor = producto.precio * producto.stock;
+    console.log(`El valor total del producto ${producto.nombre} es de $${valor}`);
+});
 
