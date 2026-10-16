@@ -861,7 +861,7 @@ procesarProductos(productos2, mostrarValorStock);
 
 //-------PROMESAS----------
 
-
+/*
 const promesaProducto = new Promise((resolve, reject) => {
     resolve({
         nombre: "Teclado",
@@ -874,4 +874,32 @@ promesaProducto.then(producto => {
     const valor = producto.precio * producto.stock;
     console.log(`El valor total del producto ${producto.nombre} es de $${valor}`);
 });
+
+*/
+
+const cargarProductos = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const productos = [
+                { nombre: "Mouse", precio: 15, stock: 10 },
+                { nombre: "Teclado", precio: 25, stock: 5 },
+                { nombre: "Monitor", precio: 150, stock: 0 }
+            ];
+
+            resolve(productos);
+        }, 1000);
+    });
+};
+
+
+cargarProductos()
+    .then(productos => {
+        productos.forEach(producto => {
+            console.log(producto.nombre);
+        });
+    })
+
+    .catch(error => {
+    console.log("Error:", error.message);
+    });
 
