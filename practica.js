@@ -894,11 +894,14 @@ const cargarProductos = () => {
 
 cargarProductos()
     .then(productos => {
+        const resultado = productos.filter(producto => producto.stock > 0);
+        return resultado;
+    })
+    .then(productos => {
         productos.forEach(producto => {
             console.log(producto.nombre);
         });
     })
-
     .catch(error => {
     console.log("Error:", error.message);
     });
