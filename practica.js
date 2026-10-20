@@ -894,12 +894,13 @@ const cargarProductos = () => {
 
 cargarProductos()
     .then(productos => {
-        const resultado = productos.filter(producto => producto.stock > 0);
-        return resultado;
+        return productos.filter(producto => producto.stock > 0);
+        
     })
     .then(productos => {
         productos.forEach(producto => {
-            console.log(producto.nombre);
+            valor = producto.precio * producto.stock;
+            console.log(`${producto.nombre}: $${valor}`);
         });
     })
     .catch(error => {
