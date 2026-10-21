@@ -876,7 +876,7 @@ promesaProducto.then(producto => {
 });
 
 */
-
+/*
 const cargarProductos = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -906,4 +906,26 @@ cargarProductos()
     .catch(error => {
     console.log("Error:", error.message);
     });
+*/
 
+const cargarProductos = () => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve([
+                { nombre: "Mouse", precio: 15 },
+                { nombre: "Teclado", precio: 25 }
+            ]);
+        }, 1000);
+    });
+};
+
+const cargarCategorias = () => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(["Accesorios", "Periféricos"]);
+        }, 1500);
+    });
+};
+
+Promise.all([cargarProductos(),cargarCategorias()])
+    .then()
