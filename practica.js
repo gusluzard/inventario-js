@@ -928,4 +928,13 @@ const cargarCategorias = () => {
 };
 
 Promise.all([cargarProductos(),cargarCategorias()])
-    .then()
+    .then(resultados=> {
+        resultados[0].forEach(resultado => {
+            console.log(resultado.nombre);
+        })
+        return resultados[1];
+    })
+    .then(resultados=> console.log(resultados))
+    .catch(error => {
+        console.log("Error:", error.message);
+    });
